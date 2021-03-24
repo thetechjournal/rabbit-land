@@ -1,0 +1,285 @@
+body {
+  margin: 0;
+  padding: 0;
+  background:  #ccccff;
+  background-image: url('../images/landscape.svg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
+.rabbit-body {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid magenta; */
+}
+
+.controls {
+  order: -1;
+  padding: 50px;
+  margin-top: 200px;
+}
+
+.head {
+  background: white;
+  height: 10em;
+  width: 10em;
+  border-radius: 50%;
+  margin-top: 12em;
+  margin-right: auto;
+  margin-left: auto;
+  /* border: 1px solid red; */
+}
+
+.ears {
+  display: flex;
+  /* border: 1px solid green; */
+}
+
+.ear {
+  background: white;
+  /* border: 1px solid black; */
+  height: 7em;
+  width: 2.5em;
+  border-radius: 50%;
+  margin-top: -4.5em;
+  margin-right: 1em;
+  margin-left: 1em;
+  z-index: -2;
+}
+
+.inner-ear {
+  height: 5em;
+  width: 1.5em;
+  border-radius: 50%;
+  background: pink;
+  margin-left: 0.5em;
+  margin-top:  1em;
+}
+
+#left-ear {
+  animation: left_ear_animation 1.4s linear infinite;
+  animation-delay: 0.5s;
+
+}
+
+#right-ear {
+  animation: right_ear_animation 1.4s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.eyes {
+  display: flex;
+}
+
+.eye {
+  height: 1.5em;
+  width: 1.5em;
+  margin-top: 0;
+  margin-right: 1.5em; 
+  margin-left: 1.8em; 
+  background: rgb(154, 170, 203);
+  border-top-left-radius: 75px;
+  border-top-right-radius: 75px;
+}
+
+.pupil {
+  height: 0.8em;
+  width: 0.8em;
+  background: rgb(58, 59, 59);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin-left: 0.3em; 
+  margin-top: 0.7em; 
+  animation: pupilBlink 2s infinite;
+}
+
+@keyframes pupilBlink {
+  0% {
+    height: 0;
+  }
+  10% {
+    height: 10px;
+  }
+}
+
+@keyframes left_ear_animation {
+  0% {
+      transform: rotate(-5deg);
+  }
+  50% {
+      transform: rotate(-15deg);
+  }
+  100% {
+      transform: rotate(-5deg);
+  }
+}
+
+@keyframes right_ear_animation {
+  0% {
+      transform: rotate(5deg);
+  }
+  50% {
+      transform: rotate(15deg);
+  }
+  100% {
+      transform: rotate(5deg);
+  }
+}
+
+.nose {
+  height: 1.5em;
+  width: 1.5em;
+  margin-top: 0.5em;
+  background: gray;
+  margin-right: 0; 
+  margin-left: 4.2em; 
+  border-radius: 50%;
+}
+
+.mouth {
+  height: 0.5em;
+  width: 2em;
+  margin-top: 1.5em;
+  margin-left: 4em;
+  background: pink;
+  border-radius: 50%;
+}
+
+.belly {
+  width: 300px;
+  height: 300px;
+  border-radius: 75%;
+  margin-top: -1em;
+  margin-right: 5px;
+  margin-left: 5px;
+  background: white;
+}
+
+.belly-inner {
+  width: 200px;
+  height: 220px;
+  border-radius: 75%;
+  margin-top: 1em;
+  margin-left: 50px;
+  background: pink;
+}
+
+.feets {
+  display: flex;
+  flex-direction: row;
+}
+
+.feet {
+  width: 50px;
+  height: 60px;
+  background: white;
+  margin-top: -3em;
+  margin-right: 55px;
+  margin-left: 55px;
+  border-bottom-left-radius: 75px;
+  border-bottom-right-radius: 75px;
+}
+
+.rabbit1 {
+  display: none;
+}
+
+.rabbit2 {
+  display: none;
+  
+}
+
+.animate1 {
+  animation-name: transform;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.animate2 {
+  animation-name: rabbit-rotate;
+  animation-delay: 2s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes transform {
+  10% {transform: translate(-100px, 0px);}
+  20% {transform: translate(-200px, 40px);}
+  30% {transform: translate(-300px, 0px);}
+  40% {transform: translate(-400px, 40px);}
+  50% {transform: translate(-500px, 0px);}
+  60% {transform: translate(-600px, 40px);}
+  70% {transform: translate(-700px, 0px);}
+  80% {transform: translate(-800px, 40px);}
+  90% {transform: translate(-900px, 0px);}
+  100% {transform: translate(-1000px, 40px);}
+}
+
+@keyframes rabbit-rotate {
+  10% {transform: translate(-100px, 0px);}
+  15% {transform: translate(-200px, 0px);}
+  20% {transform: translate(-300px, 40px);}
+  25% {transform: translate(-400px, 0px);}
+  30% {transform: rotate(10deg) translate(-500px, 0px);}
+  35% {transform: translate(-600px, 0px);}
+  40% {transform: rotate(10deg) translate(-700px, 40px);}
+  45% {transform: translate(-800px, 0px);}
+  50% {transform: rotate(5deg) translate(-900px, 0px);}
+  55% {transform: translate(-1000px, 0px);}
+  60% {transform: rotate(4deg) translate(-1100px, 40px);}
+  65% {transform: translate(-1200px, 0px);}
+  70% {transform: rotate(3deg) translate(-1300px, 0px);}
+  75% {transform: translate(-1400px, 0px);}
+  80% {transform: rotate(2deg) translate(-1500px, 40px);}
+  85% {transform: translate(-1600px, 0px);}
+  90% {transform: rotate(1deg) translate(-1700px, 0px);}
+  95% {transform: translate(-1800px, 0px);}
+  100% {transform: rotate(0deg) translate(-1900px, 40px);}
+}
+
+@media (min-width: 750px) {
+
+  .rabbit1 {
+    display: block;
+    order: 2;
+    width: 250px;
+    height: 150px;
+    background-image: url('../images/rabbit1.svg');
+    background-repeat: no-repeat;
+    margin-top: 550px;
+  }
+  
+  .rabbit2 {
+    display: block;
+    order: 2;
+    width: 250px;
+    height: 150px;
+    background-image: url('../images/rabbit1.svg');
+    background-repeat: no-repeat;
+    margin-top: 600px;
+  }
+
+} 
+
+
+
+
+
+
+
+
+
+
